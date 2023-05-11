@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace StartAPI.Controllers;
 
-[Route("api/{[controller]}")]
+[Route("api/[controller]")]
 public class CategoryController : ControllerBase
 {
     private readonly AppDbContext context;
