@@ -1,6 +1,7 @@
 using Api.Entities;
 using Api.Middlewares;
 using Api.Services;
+using Microsoft.AspNetCore.Builder;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -26,5 +27,4 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 app.UseMiddleware<ErrorHandlerMiddleware>();
 app.MapControllers();
-
 app.Run();

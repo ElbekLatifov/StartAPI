@@ -1,5 +1,6 @@
 using System;
 using Api.Entities;
+using Api.Helpers;
 using Api.Models;
 using Api.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -34,7 +35,7 @@ public class ProductController : ControllerBase
         return Ok(product);
     }
     [HttpPost]
-    public async Task<IActionResult> Create([FromBody] ProductDto dto)
+    public async Task<IActionResult> Create([FromForm] ProductDto dto)
     {
         if(!await context.Categories.AnyAsync(p=>p.Id == dto.CategoryId))
         {
@@ -44,7 +45,7 @@ public class ProductController : ControllerBase
         {
             Name = dto.Name,
             Price = dto.Price,
-            Photo_url = "url",
+            Photo_url = await FileHelper.SaveProductFile(dto.PhotoUrl),
             CategoryId = dto.CategoryId
         };
         context.Add(product);
@@ -53,7 +54,7 @@ public class ProductController : ControllerBase
     }
     [HttpPut]
     [Route("{id}")]
-    public async Task<IActionResult> Update(Guid id, [FromBody] ProductDto dto)
+    public async Task<IActionResult> Update(Guid id, [FromForm] ProductDto dto)
     {
          if(!await context.Products.AnyAsync(p=>p.Id == id))
          {
@@ -62,6 +63,7 @@ public class ProductController : ControllerBase
          var product = await context.Products.FirstOrDefaultAsync(p=>p.Id == id);
          product.Name = dto.Name;
          product.Price = dto.Price;
+         product.Photo_url = await FileHelper.SaveProductFile(dto.PhotoUrl);
          await context.SaveChangesAsync();
          return Ok(product);
     }

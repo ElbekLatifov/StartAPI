@@ -46,7 +46,7 @@ public class CategoryController : ControllerBase
         };
         context.Add(category);
          await context.SaveChangesAsync();
-        return Ok(category);
+        return Ok();
     }
     [HttpPut]
     [Route("{id}")]
@@ -59,7 +59,7 @@ public class CategoryController : ControllerBase
          var product = await context.Categories.FirstOrDefaultAsync(p=>p.Id == id);
          product.Name = dto.Name;
          await context.SaveChangesAsync();
-         return Ok(product);
+         return Ok();
     }
     [HttpDelete]
     [Route("{id}")]
