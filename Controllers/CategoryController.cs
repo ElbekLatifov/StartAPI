@@ -7,20 +7,45 @@ using Microsoft.EntityFrameworkCore;
 namespace StartAPI.Controllers;
 
 [Route("api/[controller]")]
-public class CategoryController : ControllerBase
+[ApiController]
+public class CategoriesController : ControllerBase
 {
     private readonly AppDbContext context;
 
-    public CategoryController(AppDbContext context)
+    public CategoriesController(AppDbContext context)
     {
         this.context = context;
     }
 
-        [HttpGet]
-    public async Task<List<Category>> Getlist()
+    [HttpGet]
+    public async Task<List<CreateCategoryDto>> Getlist()
     {
-        return await context.Categories.ToListAsync();
+        var ss = await context.Categories.Where(p=>p.ParentId == null).ToListAsync();
+        return await MapToDo(ss);
     }
+
+    private async Task<CreateCategoryDto> MapTo(Category dto)
+    {
+        await context.Entry(dto).Collection(p=>p.Children).LoadAsync();
+        return new CreateCategoryDto()
+        {
+            Id = dto.Id,
+            Name = dto.Name,
+            Children = await MapToDo(dto.Children),
+            ParentId = dto.ParentId
+        };
+    }
+
+    private async Task<List<CreateCategoryDto>> MapToDo(List<Category> categories)
+    {
+        List<CreateCategoryDto> yangi = new List<CreateCategoryDto>();
+        foreach (var item in categories)
+        {
+            yangi.Add(await MapTo(item));
+        }
+        return yangi;
+    }
+
     [HttpGet]
     [Route("{id}")]
     public async Task<IActionResult> Getbyid(Guid id)

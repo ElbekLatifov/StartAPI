@@ -1,7 +1,6 @@
 using Api.Entities;
 using Api.Middlewares;
-using Api.Services;
-using Microsoft.AspNetCore.Builder;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +10,12 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+var logger = new LoggerConfiguration()
+    .WriteTo.File("logchi.txt", Serilog.Events.LogEventLevel.Error)
+        .WriteTo.Console().CreateLogger();
+
+builder.Logging.AddSerilog(logger);
 // builder.Services.AddScoped<Logger>();
 // builder.Logging.AddProvider(new LoggerProvider());
 builder.Services.AddDbContext<AppDbContext>();

@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace StartAPI.Controllers;
 
-[Route("api/product")]
+[Route("api/products")]
 public class ProductController : ControllerBase
 {
     private readonly AppDbContext context;
