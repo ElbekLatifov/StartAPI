@@ -76,3 +76,4 @@ D:\Api\StartAPI\bin\Debug\net7.0\Serilog.Settings.Configuration.dll
 D:\Api\StartAPI\bin\Debug\net7.0\Serilog.Sinks.Console.dll
 D:\Api\StartAPI\bin\Debug\net7.0\Serilog.Sinks.Debug.dll
 D:\Api\StartAPI\bin\Debug\net7.0\Serilog.Sinks.File.dll
+D:\Api\StartAPI\bin\Debug\net7.0\StartAPI.staticwebassets.runtime.json

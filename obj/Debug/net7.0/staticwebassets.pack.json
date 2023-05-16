@@ -1,0 +1,33 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\Api\\StartAPI\\wwwroot\\Files\\ProductFiles\\1e4e2c90-1279-4cbb-934b-ba088446a4fc.jpg",
+      "PackagePath": "staticwebassets\\Files\\ProductFiles\\1e4e2c90-1279-4cbb-934b-ba088446a4fc.jpg"
+    },
+    {
+      "Id": "D:\\Api\\StartAPI\\wwwroot\\Files\\ProductFiles\\81fc3c91-6c77-4d7b-83e2-ee4273e4549b.jpg",
+      "PackagePath": "staticwebassets\\Files\\ProductFiles\\81fc3c91-6c77-4d7b-83e2-ee4273e4549b.jpg"
+    },
+    {
+      "Id": "D:\\Api\\StartAPI\\wwwroot\\Files\\ProductFiles\\daf783ba-ea68-46bf-b82b-c466b006d739.jpg",
+      "PackagePath": "staticwebassets\\Files\\ProductFiles\\daf783ba-ea68-46bf-b82b-c466b006d739.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.StartAPI.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.StartAPI.props",
+      "PackagePath": "build\\StartAPI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.StartAPI.props",
+      "PackagePath": "buildMultiTargeting\\StartAPI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.StartAPI.props",
+      "PackagePath": "buildTransitive\\StartAPI.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

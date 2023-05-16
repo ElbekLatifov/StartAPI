@@ -1,3 +1,4 @@
+using System.Security.AccessControl;
 using System;
 using Api.Entities;
 using Api.Helpers;
@@ -5,24 +6,39 @@ using Api.Models;
 using Api.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 
 namespace StartAPI.Controllers;
 
-[Route("api/products")]
+[Route("api/[controller]")]
 public class ProductController : ControllerBase
 {
     private readonly AppDbContext context;
+    private readonly IConfiguration _configuration;
+    private readonly IOptions<Info> options;
+    private readonly Info info;
 
-    public ProductController(AppDbContext context)
+    public ProductController(IOptions<Info> options, AppDbContext context, IConfiguration configuration)
     {
+        info = options.Value;
         this.context = context;
+        _configuration = configuration;
     }
 
     [HttpGet]
-    public async Task<List<Product>> Getlist()
+    public string Tajriba()
     {
-        return await context.Products.ToListAsync();
+        Info? Infos = _configuration.GetSection("Info").Get<Info>();
+        Infos = info;
+        var azolar = Infos.Azolar;
+        return azolar[6];
     }
+
+    //[HttpGet]
+    //public async Task<List<Product>> Getlist()
+    //{
+    //    return await context.Products.ToListAsync();
+    //}
     [HttpGet]
     [Route("{id}")]
     public async Task<IActionResult> Getbyid(Guid id)

@@ -10,5 +10,5 @@ public class CreateCategoryDto
    public string Name { get; set; }
    public Guid? ParentId { get; set; }
    public List<CreateCategoryDto>? Children { get; set; }
-   public List<Product>? Products { get; set; }
+   public List<Product> Products { get; set; }
 }

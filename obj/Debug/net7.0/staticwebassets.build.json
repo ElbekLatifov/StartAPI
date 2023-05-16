@@ -1,11 +1,71 @@
 {
   "Version": 1,
-  "Hash": "Q7X5ZL5HF3uf7pYA23L+G8Socu+fseH5fulMEELnxj4=",
+  "Hash": "qAbkkOjeeNfPAEarcnCPPd1WQ6Cmobks0elsccDh548=",
   "Source": "StartAPI",
   "BasePath": "_content/StartAPI",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "StartAPI\\wwwroot",
+      "Source": "StartAPI",
+      "ContentRoot": "D:\\Api\\StartAPI\\wwwroot\\",
+      "BasePath": "_content/StartAPI",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "D:\\Api\\StartAPI\\wwwroot\\Files\\ProductFiles\\1e4e2c90-1279-4cbb-934b-ba088446a4fc.jpg",
+      "SourceId": "StartAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Api\\StartAPI\\wwwroot\\",
+      "BasePath": "_content/StartAPI",
+      "RelativePath": "Files/ProductFiles/1e4e2c90-1279-4cbb-934b-ba088446a4fc.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Files\\ProductFiles\\1e4e2c90-1279-4cbb-934b-ba088446a4fc.jpg"
+    },
+    {
+      "Identity": "D:\\Api\\StartAPI\\wwwroot\\Files\\ProductFiles\\81fc3c91-6c77-4d7b-83e2-ee4273e4549b.jpg",
+      "SourceId": "StartAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Api\\StartAPI\\wwwroot\\",
+      "BasePath": "_content/StartAPI",
+      "RelativePath": "Files/ProductFiles/81fc3c91-6c77-4d7b-83e2-ee4273e4549b.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Files\\ProductFiles\\81fc3c91-6c77-4d7b-83e2-ee4273e4549b.jpg"
+    },
+    {
+      "Identity": "D:\\Api\\StartAPI\\wwwroot\\Files\\ProductFiles\\daf783ba-ea68-46bf-b82b-c466b006d739.jpg",
+      "SourceId": "StartAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Api\\StartAPI\\wwwroot\\",
+      "BasePath": "_content/StartAPI",
+      "RelativePath": "Files/ProductFiles/daf783ba-ea68-46bf-b82b-c466b006d739.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Files\\ProductFiles\\daf783ba-ea68-46bf-b82b-c466b006d739.jpg"
+    }
+  ]
 }
